@@ -1,0 +1,40 @@
+<%- include ('../layouts/header.ejs') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>Thông tin chi tiết</h1>
+            <a>Tên Khách hàng : </a><span class="text-capitalize"><%= ReadUser.name  %> </span>
+            <table class="table table-bordered table-sm table-hover" >
+                <thead class="thead-dark">
+                    <tr>
+
+
+                            <th class="text-center" >Tên khách hàng</th>
+                            <th class="text-center">Loại Gas</th>
+                            <th class="text-center">Số lượng</th>
+                            <th class="text-center">Thành tiền</th>
+                            <th class="text-center">Người giao</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <form action="/users/sua/<%= ReadUser._id %>"" method="POST">
+
+                            <td><input type="text" name="name" id="" class="form-control text-center" value="<%= ReadUser.name  %>" ></td>
+                            <td><input type="text" name="loai" id="" class="form-control text-center" value="<%= ReadUser.loai  %>" ></td>
+                            <td><input type="number" name="soluong" id="" class="form-control text-center " value="<%= ReadUser.soluong  %>"></td>
+                            <td><input type="number" name="gia" id="" class="form-control text-center"value="<%= ReadUser.gia  %>" ></td>
+                            <td><input type="text" name="giao" id="" class="form-control text-center" value="<%= ReadUser.giao  %>"></td>
+                            
+                            <button type="submit" class="btn btn-primary col-auto mb-2">Cập nhật</button>
+                        
+                        </form>
+                    </tr>
+
+        </div>
+    </div>
+</div>
+
+<%- include ('../layouts/footer.ejs') %>
