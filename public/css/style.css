@@ -1,0 +1,43 @@
+*{margin: 0px;padding: 0px;}
+
+.top{
+    background-color: burlywood;
+    background-size: cover;
+    height: auto;
+}
+.mtren{
+    background: transparent!important;
+}
+a.logo{
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+    background-color: chocolate;
+    padding: 18px 20px;
+    position: relative;
+    top:-10px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+.mphai a.nav-link{
+    text-transform: uppercase;
+    padding: 15px 23px;
+    font-size: 15px;
+    font-family: 'Roboto Slab', serif;
+    color: chocolate;
+    transition: 0.4s;
+}
+.top .mphai li.active a.nav-link{
+    color: dodgerblue;
+}
+.top .mphai a.nav-link:hover{
+    color: dodgerblue;
+}
+.top .mphai a.nav-link.nutsignup{
+    border-color: white;
+    padding: 12px 22px;
+}
+.top .mphai a.nav-link.nutsignup:hover{
+    background: #ec6952;
+    background-color:  #ec6952;
+    color: white;
+}
