@@ -1,5 +1,5 @@
 var User = require('../models/user.model');
-
+// var md5 = require('md5');
 
 //  Tìm tất cả
 module.exports.index = async function(req, res) {

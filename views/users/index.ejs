@@ -44,7 +44,7 @@
                         <td class="text-capitalize"><%= users[i].name %> </td>
                         <td class="text-uppercase text-center"><%= users[i].loai %></td>
                         <td class="text-center"><%= users[i].soluong %></td>
-                        <td class="text-right"><%= (users[i].gia).toLocaleString("fi-FI")+" đ" %></td>
+                        <td class="text-right"><%= (users[i].gia) %></td>
                         <td class="text-capitalize text-center"><%= users[i].giao %></td>
                         <td><a href="/users/xem/<%= users[i]._id %> " >Xem</a></td>
                         <td><a href="/users/sua/<%= users[i]._id %> ">
