@@ -17,7 +17,7 @@ router.get('/xem/:idread', controller.read);
 
 router.get('/sua/:idcansua', controller.sua);
 router.post('/sua/:idcansua', controller.postsua);
-router.post('/xoa/:idcanxoa', controller.xoa);
+router.get('/xoa/:idcanxoa', controller.xoa);
 
 
 

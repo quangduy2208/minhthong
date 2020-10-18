@@ -66,13 +66,16 @@ module.exports.postsua =function(req, res) {
 // xoa id
 module.exports.xoa =function(req, res, next) {
   var id = req.params.idcanxoa;
-  User.findById(id,function(err,data){
+  // console.log(id);
+  User.findById(id,function(err,xoadata){
   if(err) return handleError(err);
-  data.del = "x";
-  data.save();
+  xoadata.del = "x";
+  xoadata.save();
   res.redirect('/users');
-  console.log(data);
+  // console.log(err);
+  
 })};
+
 // xoa id
 // module.exports.xoa =function(req, res, next) {
 //   var id = req.params.idcanxoa;
