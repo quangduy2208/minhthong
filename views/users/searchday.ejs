@@ -8,14 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
-    <script type="text/javascript">
-        function xoahaykhong(tinnhan){
-            if(window.confirm(tinnhan)==true){
-                return true;
-            }
-            return false;
-        }
-    </script>
+
 
 </head>
 <body>
@@ -23,15 +16,15 @@
 
 <div class="top">
 
-    <%- include ('../layouts/header.ejs') %>
+<%- include ('../layouts/header.ejs') %>
 
     <div class="container ">
     <div class="row">
         <div class="col-sm-12 mr-3">
             <h1><p class="text-center">BẢNG THÔNG TIN BÁN HÀNG</p></h1>
             <div class="d-flex align-items-center mb-3">
-                <form action="/users/search" class="ml-auto d-flex" method="GET">
-                <input type="text" name="q" class="form-control" placeholder="Tìm tên Khách Hàng">
+                <form action="/users/searchday" class="ml-auto d-flex" method="GET">
+                <input type="date" name="bcngay" class="form-control" placeholder="dd-mm-yyyy">
                 <button class="btn btn-primary ml-2">Tìm</button>
                 </form>
             </div>
@@ -39,46 +32,37 @@
             <table class="table table-bordered table-sm table-hover" >
                 <thead class="thead-dark">
                     <tr>
-                        <form action="/users/create" method="POST">
                             <th><p class="text-center">STT</p></th>
                             <th><p class="text-center">Ngày</p></th>
-                            <th><input type="text" name="name" id="" class="form-control text-center" placeholder="Tên khách hàng"></th>
-                            <th><input type="text" name="loai" id="" class="form-control text-center" placeholder="Loại Gas"></th>
-                            <th><input type="number" name="soluong" id="" class="form-control text-center" placeholder="Số Lượng"></th>
-                            <th><input type="number" name="gia" id="" class="form-control text-center" placeholder="Thành tiền"></th>
-                            <th><input type="text" name="giao" id="" class="form-control text-center" placeholder="Người giao"></th>
-                            <th><p class="text-center"></p></th>
-                            <th><button type="submit" class="btn btn-primary col-auto">Tạo</button></th>
-                        
-                        </form>
+                            <th>Tên khách hàng</th>
+                            <th>Loại Gas</th>
+                            <th>Số Lượng</th>
+                            <th>Thành tiền</th>
+                            <th>Người giao</th>
                     </tr>
                 </thead>
                 <tbody>
                         <tr>
-                            <td colspan="3"></td>
+                            <td></td>
+                            <td></td>
                             <td class="text-capitalize text-center font-weight-bold">Tổng</td>
                             <td class="e text-center font-weight-bold"><p> <%= (users.reduce((a, b) => a + (+b.soluong || 0), 0)).toLocaleString("fi-FI") %></p></td>
                             <td class="e text-center font-weight-bold"><p> <%= (users.reduce((a, b) => a + (+b.gia || 0), 0)).toLocaleString("fi-FI")+" đ" %></p></td>
-                            
-                            <td colspan="3"></td>
+                            <td></td>
+                            <td></td>
 
                         </tr>
-                    <% for(var i = users.length - 1;i >=0 ;i--){ %>
+                    <% for(var i = 0 ;i < users.length ;i++){ %>
                     <tr>
                         
-                        <td><%= users.length-i  %></td>
+                        <td><%= i+1  %></td>
                         <td><%= (users[i].month).getHours()+":"+(users[i].month).getMinutes()+"_"+(users[i].month).getDate()+"/"+((users[i].month).getMonth()+1)+"/"+(users[i].month).getFullYear()  %></td>
                         <td class="text-capitalize"><%= users[i].name %> </td>
                         <td class="text-uppercase text-center"><%= users[i].loai %></td>
                         <td class="text-center"><%= users[i].soluong %></td>
                         <td class="text-right"><%= (users[i].gia).toLocaleString("fi-FI")+" đ" %></td>
                         <td class="text-capitalize text-center"><%= users[i].giao %></td>
-                        <td><a href="/users/xem/<%= users[i]._id %> " >Xem</a></td>
-                        <td><a href="/users/sua/<%= users[i]._id %> ">
-                            <i class="fa fa-edit "></i></a> /
-                            <a onclick="return xoahaykhong('Ban co chac chan xoa hay khong');" href="/users/xoa/<%= users[i]._id %> ">
-                                <i class="fa fa-remove "></i></a></td>
-                        
+
                     </tr>
                 <% } %> 
                 </tbody>
@@ -88,9 +72,8 @@
         </div>
     </div>
     </div>
-
-
 </div>
+
   <%- include ('../layouts/footer.ejs') %>
 </body>
 </html>

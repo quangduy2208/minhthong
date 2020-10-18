@@ -1,35 +1,54 @@
-<%- include ('../layouts/header.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH Gas Vinh Quang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <h1>Thông tin chi tiet</h1>
-            <span>Khách hàng : <%= user.name  %> </span>
-           
-            <table class="table table-bordered table-sm table-hover" >
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Ngày</th>
-                        <th>Tên</th>
-                        <th>Loại</th>
-                        <th>Số lượng</th>
-                        <th>Giá</th>
-                        <th>Người giao</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><%= (user.month).getHours()+":"+(user.month).getMinutes()+"_"+(user.month).getDate()+"/"+(user.month).getMonth()+"/"+(user.month).getFullYear() %> </td>
-                        <td><%= user.name %> </td>
-                        <td><%= user.loai %> </td>
-                        <td><%= user.soluong %> </td>
-                        <td><%= user.gia %> </td>
-                        <td><%= user.giao %> </td>
-                    </tr>
-                </tbody>
-            </table>
+<div class="top">
+
+    <%- include ('../layouts/header.ejs') %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1>Thông tin chi tiet</h1>
+                <span>Khách hàng : <%= user.name  %> </span>
+            <div class="trang">
+                <table class="table table-bordered table-sm table-hover" >
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Ngày</th>
+                            <th>Tên</th>
+                            <th>Loại</th>
+                            <th>Số lượng</th>
+                            <th>Giá</th>
+                            <th>Người giao</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><%= (user.month).getHours()+":"+(user.month).getMinutes()+"_"+(user.month).getDate()+"/"+(user.month).getMonth()+"/"+(user.month).getFullYear() %> </td>
+                            <td><%= user.name %> </td>
+                            <td><%= user.loai %> </td>
+                            <td><%= user.soluong %> </td>
+                            <td><%= user.gia %> </td>
+                            <td><%= user.giao %> </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
+</div>
 <%- include ('../layouts/footer.ejs') %>
+</body>
+</html>

@@ -11,17 +11,51 @@ module.exports.index = async function(req, res) {
   });
 };
 
+//  Tìm tất cả  da xoa
+module.exports.daxoa = async function(req, res) {
+
+  var users = await User.find({del:"x"});
+  // console.log(users);
+  res.render('users/daxoa', {
+    users: users
+  });
+};
+
+
+//tim theo ngày
+module.exports.searchday =async function(req, res) {
+  var bcngay = req.query.bcngay;
+  var bcngayUsers =await User.find({
+    month:{$gte : bcngay},
+    del:null
+  });
+    res.render('users/searchday', {
+    users: bcngayUsers
+  });
+}; 
+
+//tim theo ngày
+// module.exports.searchday =async function(req, res) {
+//   var bcngay = req.query.bcngay;
+//   var bcngayUsers =await User.find({
+//     month:{ $gte: bcngay},
+//     del:null
+//   });
+//     res.render('users/searchday', {
+//     users: bcngayUsers
+//   });
+// }; 
+
+
+//tim theo khach hang
 module.exports.search =async function(req, res) {
   var q = req.query.q;
-  
   var matchedUsers =await User.find({
     name:{ $regex: q},
     del:null
   });
-  
-  res.render('users/index', {
+    res.render('users/index', {
     users: matchedUsers
-    
   });
 };
 

@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 
 var userSchema  = new mongoose.Schema({
 	month: Date,
+	day:Date,
 	email: String,
 	password: String,
 	name: String,

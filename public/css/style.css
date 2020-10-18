@@ -41,3 +41,6 @@ a.logo{
     background-color:  #ec6952;
     color: white;
 }
+.trang{
+    overflow: auto;
+}

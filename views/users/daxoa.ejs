@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH Gas Vinh Quang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  
+
+<div class="top">
+
+<%- include ('../layouts/header.ejs') %>
+  <div class="container ">
+    <div class="row">
+        <div class="col-sm-12 mr-3">
+            <h1><p class="text-center">BẢNG THÔNG TIN BÁN HÀNG</p></h1>
+        <div class="trang">
+            <table class="table table-bordered table-sm table-hover" >
+                <thead class="thead-dark">
+                    <tr>
+                            <th><p class="text-center">STT</p></th>
+                            <th><p class="text-center">Ngày</p></th>
+                            <th>Tên khách hàng</th>
+                            <th>Loại</th>
+                            <th>Số Lượng</th>
+                            <th>Thành tiền</th>
+                            <th>Người giao</th>
+                            <th></th>
+                            
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <% for(var i = users.length - 1;i >=0 ;i--){ %>
+                    <tr>
+                        
+                        <td><%= users.length-i  %></td>
+                        <td><%= (users[i].month).getHours()+":"+(users[i].month).getMinutes()+"_"+(users[i].month).getDate()+"/"+((users[i].month).getMonth()+1)+"/"+(users[i].month).getFullYear()  %></td>
+                        <td class="text-capitalize"><%= users[i].name %> </td>
+                        <td class="text-uppercase text-center"><%= users[i].loai %></td>
+                        <td class="text-center"><%= users[i].soluong %></td>
+                        <td class="text-right"><%= (users[i].gia).toLocaleString("fi-FI")+" đ" %></td>
+                        <td class="text-capitalize text-center"><%= users[i].giao %></td>
+
+                        
+                    </tr>
+                <% } %> 
+
+                <tr>
+                    <td colspan="3"></td>
+                    <td class="text-capitalize text-center font-weight-bold">Tổng</td>
+                    <td></td>
+                    <td class="e text-center font-weight-bold"><p> <%= (users.reduce((a, b) => a + (+b.gia || 0), 0)).toLocaleString("fi-FI")+" đ" %></p></td>
+                    <td ></td>
+
+                </tr>
+                </tbody>
+                
+               
+            </table>
+        </div>
+        </div>
+    </div>
+  </div>
+
+</div>
+<%- include ('../layouts/footer.ejs') %>
+</body>
+</html>

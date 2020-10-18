@@ -1,3 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH Gas Vinh Quang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+
+</head>
+<body>
+  
+
+<div class="top">
+
 <%- include ('../layouts/header.ejs') %>
 
 <div class="container">
@@ -5,17 +23,15 @@
         <div class="col-sm-12">
             <h1>Thông tin chi tiết</h1>
             <a>Tên Khách hàng : </a><span class="text-capitalize"><%= ReadUser.name  %> </span>
+            <div class="trang">
             <table class="table table-bordered table-sm table-hover" >
                 <thead class="thead-dark">
                     <tr>
-
-
                             <th class="text-center" >Tên khách hàng</th>
                             <th class="text-center">Loại Gas</th>
                             <th class="text-center">Số lượng</th>
                             <th class="text-center">Thành tiền</th>
                             <th class="text-center">Người giao</th>
-
                     </tr>
                 </thead>
                 <tbody>
@@ -27,14 +43,18 @@
                             <td><input type="number" name="soluong" id="" class="form-control text-center " value="<%= ReadUser.soluong  %>"></td>
                             <td><input type="number" name="gia" id="" class="form-control text-center"value="<%= ReadUser.gia  %>" ></td>
                             <td><input type="text" name="giao" id="" class="form-control text-center" value="<%= ReadUser.giao  %>"></td>
-                            
+
                             <button type="submit" class="btn btn-primary col-auto mb-2">Cập nhật</button>
-                        
+
                         </form>
                     </tr>
-
+            </table>
+        </div>
         </div>
     </div>
 </div>
 
+</div>
 <%- include ('../layouts/footer.ejs') %>
+</body>
+</html>
