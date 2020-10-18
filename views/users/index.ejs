@@ -40,7 +40,7 @@
                     <tr>
                         
                         <td><%= users.length-i  %></td>
-                        <td><%= (users[i].month).getHours()+":"+(users[i].month).getMinutes()+"_"+(users[i].month).getDate()+"/"+((users[i].month).getMonth()+1)+"/"+(users[i].month).getFullYear()  %></td>
+                        <td><%= (users[i].month).getUTCHours()+":"+(users[i].month).getMinutes()+"_"+(users[i].month).getDate()+"/"+((users[i].month).getMonth()+1)+"/"+(users[i].month).getFullYear()  %></td>
                         <td class="text-capitalize"><%= users[i].name %> </td>
                         <td class="text-uppercase text-center"><%= users[i].loai %></td>
                         <td class="text-center"><%= users[i].soluong %></td>
