@@ -45,7 +45,7 @@
                             <th><input type="text" name="name" id="" class="form-control text-center" placeholder="Tên khách hàng"></th>
                             <th><input type="text" name="loai" id="" class="form-control text-center" placeholder="Loại Gas"></th>
                             <th><input type="number" name="soluong" id="" class="form-control text-center" placeholder="Số Lượng"></th>
-                            <th><input type="number" name="gia" id="" class="form-control text-center" placeholder="Thành tiền"></th>
+                            <th><input type="number" name="gia" id="" class="form-control text-center" pattern="^\d*(\.\d{0,2})?$" placeholder="Thành tiền"></th>
                             <th><input type="text" name="giao" id="" class="form-control text-center" placeholder="Người giao"></th>
                             <th><p class="text-center"></p></th>
                             <th><button type="submit" class="btn btn-primary col-auto">Tạo</button></th>
@@ -72,7 +72,7 @@
                         <td class="text-capitalize"><%= users[i].name %> </td>
                         <td class="text-uppercase text-center"><%= users[i].loai %></td>
                         <td class="text-center"><%= users[i].soluong %></td>
-                        <td class="text-right"><%= (users[i].gia).toLocaleString("fi-FI")+" đ" %></td>
+                        <td class="text-right"><%= (users[i].gia) %></td>
                         <td class="text-capitalize text-center"><%= users[i].giao %></td>
                         <td><a href="/users/xem/<%= users[i]._id %> " >Xem</a></td>
                         <td><a href="/users/sua/<%= users[i]._id %> ">

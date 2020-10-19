@@ -24,7 +24,8 @@
             <h1><p class="text-center">BẢNG THÔNG TIN BÁN HÀNG</p></h1>
             <div class="d-flex align-items-center mb-3">
                 <form action="/users/searchday" class="ml-auto d-flex" method="GET">
-                <input type="date" name="bcngay" class="form-control" placeholder="dd-mm-yyyy">
+                    
+                    <input type="date" name="bcngay" class="form-control" placeholder="dd-mm-yyyy">
                 <button class="btn btn-primary ml-2">Tìm</button>
                 </form>
             </div>
@@ -32,17 +33,19 @@
             <table class="table table-bordered table-sm table-hover" >
                 <thead class="thead-dark">
                     <tr>
-                            <th><p class="text-center">STT</p></th>
-                            <th><p class="text-center">Ngày</p></th>
-                            <th>Tên khách hàng</th>
-                            <th>Loại Gas</th>
-                            <th>Số Lượng</th>
-                            <th>Thành tiền</th>
-                            <th>Người giao</th>
+                            <th class="text-center">STT</th>
+                            <th class="text-center">Ngày</th>
+                            <th class="text-center">Tên khách hàng</th>
+                            <th class="text-center">Loại Gas</th>
+                            <th class="text-center">Số Lượng</th>
+                            <th class="text-center">Thành tiền</th>
+                            <th class="text-center">Người giao</th>
+
                     </tr>
                 </thead>
                 <tbody>
                         <tr>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td class="text-capitalize text-center font-weight-bold">Tổng</td>
@@ -60,7 +63,7 @@
                         <td class="text-capitalize"><%= users[i].name %> </td>
                         <td class="text-uppercase text-center"><%= users[i].loai %></td>
                         <td class="text-center"><%= users[i].soluong %></td>
-                        <td class="text-right"><%= (users[i].gia).toLocaleString("fi-FI")+" đ" %></td>
+                        <td class="text-right"><%= (users[i].gia)+" đ" %></td>
                         <td class="text-capitalize text-center"><%= users[i].giao %></td>
 
                     </tr>

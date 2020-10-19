@@ -1,10 +1,15 @@
+const { isValidObjectId } = require('mongoose');
 var User = require('../models/user.model');
 // var md5 = require('md5');
 
 //  Tìm tất cả
 module.exports.index = async function(req, res) {
+  // var locngay1 = new Date();
+  // var bcngay1 =  locngay1.getFullYear()+"-"+(locngay1.getMonth()+1)+"-"+locngay1.getDate();
 
-  var users = await User.find({del:null});
+  var users = await User.find({
+    // month:{$gte :  bcngay1},
+    del:null});
   // console.log(users);
   res.render('users/index', {
     users: users
@@ -24,9 +29,11 @@ module.exports.daxoa = async function(req, res) {
 
 //tim theo ngày
 module.exports.searchday =async function(req, res) {
-  var bcngay = req.query.bcngay;
+  var locngay = new Date();
+  var bcngay =  locngay.getFullYear()+"-"+(locngay.getMonth()+1)+"-"+locngay.getDate();
+  
   var bcngayUsers =await User.find({
-    month:{$gte : bcngay},
+    month:{$gte :  bcngay},
     del:null
   });
     res.render('users/searchday', {
@@ -34,17 +41,6 @@ module.exports.searchday =async function(req, res) {
   });
 }; 
 
-//tim theo ngày
-// module.exports.searchday =async function(req, res) {
-//   var bcngay = req.query.bcngay;
-//   var bcngayUsers =await User.find({
-//     month:{ $gte: bcngay},
-//     del:null
-//   });
-//     res.render('users/searchday', {
-//     users: bcngayUsers
-//   });
-// }; 
 
 
 //tim theo khach hang
