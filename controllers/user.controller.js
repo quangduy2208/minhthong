@@ -4,11 +4,11 @@ var User = require('../models/user.model');
 
 //  Tìm tất cả
 module.exports.index = async function(req, res) {
-  // var locngay1 = new Date();
-  // var bcngay1 =  locngay1.getFullYear()+"-"+(locngay1.getMonth()+1)+"-"+locngay1.getDate();
+  var locngay1 = new Date();
+  var bcngay1 =  locngay1.getFullYear()+"-"+(locngay1.getMonth()+1)+"-"+locngay1.getDate();
 
   var users = await User.find({
-    // month:{$gte :  bcngay1},
+    month:{$gte :  bcngay1},
     del:null});
   // console.log(users);
   res.render('users/index', {
