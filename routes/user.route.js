@@ -9,7 +9,6 @@ var router = express.Router();
 router.get('/', controller.index);
 router.get('/daxoa', controller.daxoa);
 router.get('/search', controller.search);
-
 router.get('/searchday', controller.searchday);
 
 

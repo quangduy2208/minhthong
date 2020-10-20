@@ -29,12 +29,25 @@
     <div class="row">
         <div class="col-sm-12 mr-3">
             <h1><p class="text-center">BẢNG THÔNG TIN BÁN HÀNG</p></h1>
+
             <div class="d-flex align-items-center mb-3">
+                
+            
+                <form action="/users/searchday" class="mr-auto d-flex" method="GET">
+                    <!-- <input type="date" id="today" name="w"  class="form-control"> -->
+                    <button class="btn btn-primary mr-2">Tìm </button>
+                    <input type="date" name="w" class="form-control mr-2" >
+                    
+                </form>
+
                 <form action="/users/search" class="ml-auto d-flex" method="GET">
-                <input type="text" name="q" class="form-control" placeholder="Tìm tên Khách Hàng">
-                <button class="btn btn-primary ml-2">Tìm</button>
+                    
+                    <input type="text" name="q" class="form-control ml-2" placeholder="Tìm tên Khách Hàng">
+                    <button class="btn btn-primary ml-2">Tìm</button>
                 </form>
             </div>
+
+
             <div class="trang">
             <table class="table table-bordered table-sm table-hover" >
                 <thead class="thead-dark">
@@ -42,7 +55,7 @@
                         <form action="/users/create" method="POST">
                             <th><p class="text-center">STT</p></th>
                             <th><p class="text-center">Ngày</p></th>
-                            <th><input type="text" name="name" id="" class="form-control text-center" placeholder="Tên khách hàng"></th>
+                            <th><input type="text" name="name" id="" class="form-control text-center " placeholder="Tên khách hàng"></th>
                             <th><input type="text" name="loai" id="" class="form-control text-center" placeholder="Loại Gas"></th>
                             <th><input type="number" name="soluong" id="" class="form-control text-center" placeholder="Số Lượng"></th>
                             <th><input type="number" name="gia" id="" class="form-control text-center"  placeholder="Thành tiền"></th>
